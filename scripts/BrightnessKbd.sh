@@ -6,7 +6,7 @@ iDIR="$HOME/.config/swaync/icons"
 
 # Get keyboard brightness
 get_kbd_backlight() {
-	echo $(brightnessctl -d '*::kbd_backlight' -m | cut -d, -f4)
+	echo $(brightnessctl -d ':white:kbd_backlight' -m | cut -d, -f4)
 }
 
 # Get icons
@@ -31,7 +31,7 @@ notify_user() {
 
 # Change brightness
 change_kbd_backlight() {
-	brightnessctl -d *::kbd_backlight set "$1" && get_icon && notify_user
+	brightnessctl -d ':white:kbd_backlight' set "$1" && get_icon && notify_user
 }
 
 # Execute accordingly
